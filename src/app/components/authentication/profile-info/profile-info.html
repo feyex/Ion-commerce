@@ -1,0 +1,46 @@
+<!-- 
+  <form [formGroup]="profileForm" role="form" (ngSubmit)="saveProfile(profileForm.value)" role="form">
+    <input accept="image/*" (change)="onFileChange($event)" type="file" class="hidden" id="profile-image" />
+    <ion-list>
+      <ion-item no-lines>
+        <ion-avatar (click)="openImage()" item-start>
+          <img style="width: 80px; height: 80px" id="preview" *ngIf="!profileForm?.controls?.photoURL?.value" src="assets/icon/002-user.svg">
+          <img style="width: 80px; height: 80px" *ngIf="profileForm?.controls?.photoURL?.value" src="{{profileForm?.controls?.photoURL?.value }}">
+        </ion-avatar>
+      </ion-item>
+      <ion-item>
+        <ion-label color="dark" stacked>Firstname</ion-label>
+        <ion-input formControlName="firstname" type="text" placeholder="Enter your firstname"></ion-input>
+      </ion-item>
+      <ion-item>
+        <ion-label color="dark" stacked>Lastname</ion-label>
+        <ion-input formControlName="lastname" type="text" placeholder="Enter your lastname"></ion-input>
+      </ion-item>
+      <ion-item no-lines>
+        <ion-label color="dark" stacked>Number</ion-label>
+      </ion-item>
+      <ion-item mode="ios" style="margin-top: -17px">
+        <ion-select [(ngModel)]="ext" [ngModelOptions]="{standalone: true}" align="left" color="dark" item-start interface="action-sheet">
+          <ion-option value="+234">NG (+234)</ion-option>
+          <ion-option value="+233">GH (+233)</ion-option>
+        </ion-select>
+        <ion-input aria-required="true" pattern="[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,3}$" maxlength="10" minlength="10" formControlName="phoneNumber" type="text" placeholder="+xxxx-xxxx-xxxx-xxxx"></ion-input>
+      </ion-item>
+      <ion-item>
+        <ion-label color="dark" stacked>Email</ion-label>
+        <ion-input formControlName="email" type="text" placeholder="test@example.com"></ion-input>
+      </ion-item>
+      <ion-item no-lines>
+        <ion-label stacked>Address</ion-label>
+        <ion-textarea formControlName="address" type="text" placeholder="your address"></ion-textarea>
+      </ion-item>
+      <button mode="ios" class="submit hidden" type="submit" ion-button block>
+        Submit
+      </button>
+      <button (click)="submitForm()" mode="ios" type="button" color="black" ion-button block>
+        Save Your Profile
+      </button>
+      <br />
+      <br />
+    </ion-list>
+  </form> -->

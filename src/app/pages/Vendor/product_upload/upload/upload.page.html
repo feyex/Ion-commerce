@@ -1,0 +1,52 @@
+
+
+<ion-content color="light">
+  <form [formGroup]="productForm" (ngSubmit)="Register()">
+    <ion-grid>
+      <ion-row justify-content-center>
+        <ion-col align-self-center size-md="6" size-lg = "5" size-xs = "12">
+          <div text-center>
+            <h3>Upload Products and Sell !</h3>
+          </div>
+          <div padding>
+            <ion-item>
+              <ion-label color="dark">Product Name</ion-label>
+              <ion-input formControlName="product_name" type="text"  required></ion-input>
+            </ion-item>
+            <ion-item>
+              <ion-label color="dark">Product_Image</ion-label>
+              <ion-input name="photo" type="file"  required></ion-input>
+            </ion-item>
+            <ion-item>
+              <ion-label color="dark">Quantity</ion-label>
+              <ion-input formControlName="quantity" type="number" required></ion-input>
+            </ion-item>
+            <ion-item>
+              <ion-label color="dark">Color</ion-label>
+              <ion-input formControlName="color" type="text" ></ion-input>
+            </ion-item>
+            <ion-item>
+              <ion-label color="dark">Product SKU</ion-label>
+              <ion-input formControlName="sku" type="text" required></ion-input>
+            </ion-item>
+            <ion-item>
+              <ion-label color="dark">Price</ion-label>
+              <ion-input formControlName="price" type="number" required></ion-input>
+            </ion-item>
+            <ion-item>
+              <ion-label color="dark">Previous Price</ion-label>
+              <ion-input formControlName="previous_price" type="password" placeholder="Password"  required></ion-input>
+            </ion-item>
+          </div>
+          <div padding>
+            <ion-button size="large" type="submit" [disabled]="!productForm.valid" expand="block">Upload</ion-button>
+          </div>
+        </ion-col>
+  
+      </ion-row>
+    </ion-grid>
+  
+  </form>
+  
+</ion-content>
+

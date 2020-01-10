@@ -1,0 +1,34 @@
+
+  <form role="form" [formGroup]="authForm" (ngSubmit)="sendAuthCode(authForm.value)">
+    <ion-item mode="ios" no-lines>
+      <ion-select mode="md" [(ngModel)]="ext" [ngModelOptions]="{standalone: true}" align="left" color="dark" item-start interface="action-sheet">
+        <ion-select-option value="+234">NG (+234)</ion-select-option>
+        <ion-select-option value="+233">GH (+233)</ion-select-option>
+      </ion-select>
+      <ion-input aria-required="true" maxlength="11" minlength="10" formControlName="number" type="number" placeholder="XXX-XXXX-XXX"></ion-input>
+      <ion-button class="hidden-md" style="margin-right: -10px;" [disabled]="authForm?.controls?.number?.invalid" type="submit" item-end color="black">
+        <ion-icon class="fs-25 bold" name="ios-arrow-round-forward-outline"></ion-icon>
+      </ion-button>
+    </ion-item>
+    <ion-button class="hidden-xs" [disabled]="authForm?.controls?.number?.invalid" type="submit" expand="block" color="darkgray">
+      Validate Your Number
+    </ion-button>
+  </form>
+
+  <div id="recaptcha-container" full></div>
+
+  <div id="number">
+  
+    <ion-item no-lines class="hidden-xs">
+      <ion-label>
+        <h2 color="dark">Confirm your device</h2>
+        <p>enter the one time code sent to your device</p>
+      </ion-label>
+    </ion-item>
+    <ion-item no-lines>
+      <ion-label color="darkgray"class="hidden-md" item-start>Code</ion-label>
+      <ion-input type="number" placeholder="Enter Your verfication code" [(ngModel)]="code" name="code" aria-required="true" pattern="[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,3}$"></ion-input>
+    </ion-item>
+    <br />
+    <ion-button [disabled]="!code" type="ion-button" (click)="verifyCode()" ion-ion-button color="darkgray" block>Validate Code</ion-button>
+  </div>

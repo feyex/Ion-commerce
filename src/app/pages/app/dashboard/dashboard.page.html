@@ -1,0 +1,49 @@
+<ion-header no-border translucent>
+    <ion-toolbar class="no-shadow hidden-md" lines="none">
+      <!-- <ion-buttons class="title" slot="start">
+        <i class="material-icons">subject</i>
+        <span>My accounts</span>
+      </ion-buttons> -->
+    <ion-buttons *ngIf="globals.splitPaneToggle" slot="start">
+      <ion-button clear="true" (click)="globals.toggleMenu()">
+        <i class="material-icons">menu</i>
+      </ion-button>
+    </ion-buttons>
+      <ion-buttons slot="end">
+        <ion-menu-button>
+          <i class="material-icons flip">subject</i>
+        </ion-menu-button>
+      </ion-buttons>
+    </ion-toolbar>
+    <ion-toolbar class="hidden-xs">
+      <ion-title>Overview</ion-title>
+    </ion-toolbar>
+  </ion-header>
+
+  <ion-content>
+    <ion-card fullscreen>
+      <img 
+        (click)="media.previewImage('assets/icon/favicon.png')"
+        src="assets/icon/favicon.png" />
+    </ion-card>
+    <br />
+    <ion-card fullscreen>
+      <ion-card-header>
+        <ion-card-title class="fs-18">Recent Account</ion-card-title>
+      </ion-card-header>
+      <ion-card-content class="no-padding">
+        <ion-item *ngFor="let user of users">
+          <ion-avatar slot="end">
+            <text-avatar [text]="user.name + 'i'" [color]="user.color"></text-avatar>
+          </ion-avatar>
+          
+          <ion-label>
+            <ion-text>
+              <h3>{{ user.name }}</h3>
+            </ion-text>
+            <p>{{ user.company }} - {{ user.job_title }}</p>
+          </ion-label>
+        </ion-item>
+      </ion-card-content>
+    </ion-card>
+  </ion-content>

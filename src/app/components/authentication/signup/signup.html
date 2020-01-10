@@ -1,0 +1,44 @@
+<form [formGroup]="SignupForm" (ngSubmit)="Register()">
+  <ion-grid>
+    <ion-row color ="primary" justify-content-center>
+      <ion-col align-self-center size-md="6" size-lg = "5" size-xs = "12">
+        <div text-center>
+          <h3>Create your account!</h3>
+        </div>
+        <div padding>
+          <ion-item>
+            <ion-input formControlName="firstname" type="text" placeholder="Johnny" required></ion-input>
+          </ion-item>
+          <ion-item>
+            <ion-input formControlName="lastname" type="text" placeholder="Drille" required></ion-input>
+          </ion-item>
+          <ion-item>
+            <ion-input formControlName="email" type="email" placeholder="your@email.com" required></ion-input>
+          </ion-item>
+          <ion-item>
+            <ion-input formControlName="phone" type="number" placeholder="098765443" required></ion-input>
+          </ion-item>
+          <ion-item>
+            <ion-input formControlName="password" type="password" placeholder="Password" required></ion-input>
+          </ion-item>
+        </div>
+        <div padding>
+          <ion-button size="large" type="submit" [disabled]="!SignupForm.valid" expand="block">Register</ion-button>
+        </div>
+        <div padding>
+          <ion-item lines="none">
+           <p color="light" class="fs-12">Become a seller on kread <a href="/vendor">Signup</a></p>
+          </ion-item>
+         </div>
+         <div padding>
+          <ion-item lines="none">
+           <p color="light" class="fs-12">Already have an account? <a href="/login">Login</a></p>
+          </ion-item>
+         </div>
+
+      </ion-col>
+
+    </ion-row>
+  </ion-grid>
+
+</form>

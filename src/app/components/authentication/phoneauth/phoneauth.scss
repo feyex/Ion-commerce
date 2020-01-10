@@ -1,0 +1,18 @@
+phoneauth {
+    ion-item {
+        ion-select {
+            margin-left: -15px !important;
+            margin-right: -2px !important;
+            .select-icon .select-icon-inner {
+                color: #fff;
+            }
+            &.select-disabled, .select-icon .select-icon-inner {
+                color: #fff;
+            }
+        }
+    }
+    [full], iframe {
+        width: 100% !important;
+        margin-top: 0px !important;
+    }
+}

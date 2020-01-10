@@ -1,0 +1,89 @@
+
+<div class="splash" *ngIf="showsplash">
+  <ion-spinner></ion-spinner> <span>Preparing app ...</span>
+</div>
+
+<ion-app *ngIf="!showsplash">
+  <ion-split-pane contentId="menu-content" [disabled]="globals?.splitPaneToggle">
+    <ion-menu class="sidebar" mode="ios" type="overlay" contentId="menu-content">
+      <ion-header no-border>
+        <ion-toolbar border="none" lines="none">
+          <ion-buttons slot="start" (click)="globals.toggleMenu()">
+            <ion-button clear="true">
+              <i class="material-icons">menu</i>
+            </ion-button>
+            <!-- <ion-button class="bg-primary" round clear="true">
+              <i class="material-icons">face</i>
+            </ion-button> -->
+          </ion-buttons>
+          <ion-title>
+            Kreador Tech
+          </ion-title>
+        </ion-toolbar>
+      </ion-header>
+      <ion-content>
+        <br />
+        <ion-list>
+          <ion-menu-toggle auto-hide="false">
+            <ion-item class="bg-primary-overlay" routerLink="/app" [routerDirection]="'root'" lines="none">
+              <i item-start class="material-icons">store_mall_directory</i>
+              <ion-label>
+                <h2>Overview</h2>
+              </ion-label>
+              <ion-badge slot="end">25</ion-badge>
+            </ion-item>
+            <ion-item [routerDirection]="'root'" routerLink="/activities" lines="none">
+              <ion-icon slot="start" name="flash"></ion-icon>
+              <ion-label>
+                <h2>Activities</h2>
+              </ion-label>
+              <ion-badge slot="end">25</ion-badge>
+            </ion-item>
+            <hr />
+            <ion-item [routerDirection]="'root'" lines="none">
+              <ion-icon slot="start" name="card"></ion-icon>
+              <ion-label>
+                <h2>Transactions</h2>
+              </ion-label>
+            </ion-item>
+            <ion-item [routerDirection]="'root'" lines="none">
+              <ion-icon slot="start" name="card"></ion-icon>
+              <ion-label>
+                <h2>Payment Methods</h2>
+              </ion-label>
+            </ion-item>
+            <ion-item [routerDirection]="'root'" lines="none">
+              <ion-icon slot="start" name="card"></ion-icon>
+              <ion-label>
+                <h2>Notifications</h2>
+              </ion-label>
+            </ion-item>
+            <hr />
+            <ion-item id="no-icon" lines="none">
+              <ion-label>
+                <h2>Settings</h2>
+              </ion-label>
+            </ion-item>
+            <ion-item lines="none" id="no-icon">
+              <ion-label>
+                <h2>Terms & Condition</h2>
+              </ion-label>
+            </ion-item>
+            <ion-item lines="none" id="no-icon">
+              <ion-label>
+                <h2>Frequently Asked Question</h2>
+              </ion-label>
+            </ion-item>
+            <ion-item lines="none" id="no-icon">
+              <ion-label>
+                <h2>Logout</h2>
+              </ion-label>
+            </ion-item>
+          </ion-menu-toggle>
+        </ion-list>
+      </ion-content>
+    </ion-menu>
+
+    <ion-router-outlet id="menu-content"></ion-router-outlet>
+  </ion-split-pane>
+</ion-app>
