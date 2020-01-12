@@ -61,13 +61,13 @@ export class LoginPage implements OnInit {
     this.api.vendorLogin(this.LoginForm.value)
     .subscribe((res)=>{
       this.zone.run(async () =>{
-        console.log(res);
+    
         if(res.status == true && res.verified == true){
          
           this.LoginForm.reset();
           localStorage.setItem('token', res.token);
           localStorage.setItem('user_id',res.id);
-          this.router.navigate(['/overview']);
+          this.router.navigate(['/upload']);
         }
         else if(res.status == true && res.verified == false){
          

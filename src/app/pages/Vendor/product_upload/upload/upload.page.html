@@ -1,7 +1,7 @@
 
 
 <ion-content color="light">
-  <form [formGroup]="productForm" (ngSubmit)="Register()">
+  <form [formGroup]="productForm" (ngSubmit)="submit()">
     <ion-grid>
       <ion-row justify-content-center>
         <ion-col align-self-center size-md="6" size-lg = "5" size-xs = "12">
@@ -11,36 +11,42 @@
           <div padding>
             <ion-item>
               <ion-label color="dark">Product Name</ion-label>
-              <ion-input formControlName="product_name" type="text"  required></ion-input>
+              <ion-input color="dark"  formControlName="product_name" type="text"  required></ion-input>
             </ion-item>
             <ion-item>
               <ion-label color="dark">Product_Image</ion-label>
-              <ion-input name="photo" type="file"  required></ion-input>
+              <ion-input color="dark" name="photo" type="file" (change)="fileChanged($event)"  required></ion-input>
             </ion-item>
             <ion-item>
               <ion-label color="dark">Quantity</ion-label>
-              <ion-input formControlName="quantity" type="number" required></ion-input>
+              <ion-input color="dark" formControlName="quantity" type="number" required></ion-input>
             </ion-item>
             <ion-item>
               <ion-label color="dark">Color</ion-label>
-              <ion-input formControlName="color" type="text" ></ion-input>
+              <ion-input color="dark" formControlName="color" type="text" ></ion-input>
             </ion-item>
             <ion-item>
               <ion-label color="dark">Product SKU</ion-label>
-              <ion-input formControlName="sku" type="text" required></ion-input>
+              <ion-input color="dark" formControlName="sku" type="text" required></ion-input>
             </ion-item>
             <ion-item>
               <ion-label color="dark">Price</ion-label>
-              <ion-input formControlName="price" type="number" required></ion-input>
+              <ion-input color="dark" formControlName="price" type="number" required></ion-input>
             </ion-item>
             <ion-item>
               <ion-label color="dark">Previous Price</ion-label>
-              <ion-input formControlName="previous_price" type="password" placeholder="Password"  required></ion-input>
+              <ion-input color="dark" formControlName="previous_price" type="password" placeholder="Password"  required></ion-input>
             </ion-item>
           </div>
           <div padding>
             <ion-button size="large" type="submit" [disabled]="!productForm.valid" expand="block">Upload</ion-button>
           </div>
+
+          <div padding>
+            <ion-item lines="none">
+             <p color="light" class="fs-12">View all products<a href="/dashboard">Product</a></p>
+            </ion-item>
+           </div>
         </ion-col>
   
       </ion-row>

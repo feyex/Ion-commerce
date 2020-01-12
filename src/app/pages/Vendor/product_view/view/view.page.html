@@ -4,6 +4,45 @@
   </ion-toolbar>
 </ion-header>
 
-<ion-content>
+<ion-content color="primary">
+  <ion-grid>
+    <ion-row color ="primary" justify-content-center>
+      <ion-col align-self-center size-md="6" size-lg = "5" size-xs = "12">
+        <div text-center>
+          <h3>Products View!</h3>
+        </div>
+      <ion-item *ngFor="let res of result" class="item-label item ios in-list ion-focusable hydrated">
+            <ion-label class="sc-ion-label-ios-h sc-ion-label-ios-s ios hydrated">
+              <h2>Product Name:  {{res.product_name}}</h2>
+              <h3> Quantity:  Product{{res.quantity}}</h3>
+              <h3>Colour:  {{res.color}}</h3>
+              <h3>SKU:  {{res.sku}}</h3>
+              <h3>pRICE:  {{res.price}}</h3>
+              <h3>Previous_price{{res.previous_price}}</h3>
+            </ion-label>
 
+            <div class="item-note" item-end>
+              <button ion-button clear [routerLink]="['/view/', res._id]">
+                <ion-icon name="create" style="zoom:2.0"></ion-icon>
+              </button>
+              <button ion-button clear (click)="deleteSong(song, i)">
+                <ion-icon name="trash" style="zoom:2.0"></ion-icon>
+              </button>
+            </div>
+          </ion-item>
+      
+
+
+        <!-- fab placed to the bottom start -->
+        <ion-fab vertical="bottom" horizontal="end" slot="fixed">
+          <ion-fab-button>
+            <ion-icon name="add"></ion-icon>
+          </ion-fab-button>
+        </ion-fab>
+      </ion-col>
+
+    </ion-row>
+  </ion-grid>
 </ion-content>
+
+

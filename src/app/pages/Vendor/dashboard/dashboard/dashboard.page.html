@@ -1,9 +1,38 @@
-<ion-header>
-  <ion-toolbar>
-    <ion-title>dashboard</ion-title>
-  </ion-toolbar>
-</ion-header>
+<ion-content color="primary">
+  <ion-grid>
+    <ion-row color ="primary" justify-content-center>
+      <ion-col align-self-center size-md="6" size-lg = "5" size-xs = "12">
+        <div text-center>
+          <h3>Products View!</h3>
+        </div>
+      <ion-item *ngFor="let res of result" class="item-label item ios in-list ion-focusable hydrated">
+            <ion-label class="sc-ion-label-ios-h sc-ion-label-ios-s ios hydrated">
+              <img src="{{res.photo}}">
+              <h2>Product Name:  {{res.product_name}}</h2>
+              
+            </ion-label>
 
-<ion-content>
+            <div class="item-note" item-end>
+              <button ion-button clear [routerLink]="['/view/', res._id]">
+                <ion-icon name="create" style="zoom:2.0"></ion-icon>
+              </button>
+              <button ion-button clear (click)="deleteSong(song, i)">
+                <ion-icon name="trash" style="zoom:2.0"></ion-icon>
+              </button>
+            </div>
+          </ion-item>
+      
 
+
+        <!-- fab placed to the bottom start -->
+        <div padding>
+          <ion-item lines="none">
+           <p color="light" class="fs-12">Not yet registered <a (click)="logout()">Logout</a></p>
+          </ion-item>
+         </div>
+      </ion-col>
+
+    </ion-row>
+  </ion-grid>
 </ion-content>
+

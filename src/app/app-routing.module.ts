@@ -25,6 +25,7 @@ const routes: Routes = [
   },
   { path: 'login', loadChildren: './pages/authentication/login/login.module#LoginPageModule' },
   { path: 'signup', loadChildren: './pages/authentication/signup/signup.module#SignupPageModule' },
+ 
 
   { path: 'image-preview', loadChildren: './pages/ui/image-preview/image-preview.module#ImagePreviewPageModule' },
   
@@ -46,7 +47,7 @@ const routes: Routes = [
     loadChildren:'./pages/Vendor/product_upload/upload/upload.module#UploadPageModule'
   },
   {
-    path: 'view',
+    path: 'view/:id',
     loadChildren: './pages/Vendor/product_view/view/view.module#ViewPageModule'
   },
  

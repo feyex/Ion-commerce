@@ -463,9 +463,29 @@ var map = {
 	],
 	"../app/list/list.module": [
 		"./src/app/pages/app/list/list.module.ts",
-		"default~app-list-list-module~pages-authentication-login-login-module",
+		"default~app-list-list-module~pages-authentication-login-login-module~pages-authentication-signup-sig~1bd3a818",
 		"common",
 		"app-list-list-module"
+	],
+	"./pages/Vendor/dashboard/dashboard/dashboard.module": [
+		"./src/app/pages/Vendor/dashboard/dashboard/dashboard.module.ts",
+		"pages-Vendor-dashboard-dashboard-dashboard-module"
+	],
+	"./pages/Vendor/login/login.module": [
+		"./src/app/pages/Vendor/login/login.module.ts",
+		"pages-Vendor-login-login-module"
+	],
+	"./pages/Vendor/product_upload/upload/upload.module": [
+		"./src/app/pages/Vendor/product_upload/upload/upload.module.ts",
+		"pages-Vendor-product_upload-upload-upload-module"
+	],
+	"./pages/Vendor/product_view/view/view.module": [
+		"./src/app/pages/Vendor/product_view/view/view.module.ts",
+		"pages-Vendor-product_view-view-view-module"
+	],
+	"./pages/Vendor/signup/signup.module": [
+		"./src/app/pages/Vendor/signup/signup.module.ts",
+		"pages-Vendor-signup-signup-module"
 	],
 	"./pages/app/dashboard/dashboard.module": [
 		"./src/app/pages/app/dashboard/dashboard.module.ts",
@@ -479,8 +499,13 @@ var map = {
 	],
 	"./pages/authentication/login/login.module": [
 		"./src/app/pages/authentication/login/login.module.ts",
-		"default~app-list-list-module~pages-authentication-login-login-module",
+		"default~app-list-list-module~pages-authentication-login-login-module~pages-authentication-signup-sig~1bd3a818",
 		"pages-authentication-login-login-module"
+	],
+	"./pages/authentication/signup/signup.module": [
+		"./src/app/pages/authentication/signup/signup.module.ts",
+		"default~app-list-list-module~pages-authentication-login-login-module~pages-authentication-signup-sig~1bd3a818",
+		"pages-authentication-signup-signup-module"
 	],
 	"./pages/tab-menu/tab-menu.module": [
 		"./src/app/pages/tab-menu/tab-menu.module.ts",
@@ -554,7 +579,28 @@ var routes = [
         loadChildren: './pages/app/feed/feed.module#FeedPageModule',
     },
     { path: 'login', loadChildren: './pages/authentication/login/login.module#LoginPageModule' },
+    { path: 'signup', loadChildren: './pages/authentication/signup/signup.module#SignupPageModule' },
     { path: 'image-preview', loadChildren: './pages/ui/image-preview/image-preview.module#ImagePreviewPageModule' },
+    {
+        path: 'vendor',
+        loadChildren: './pages/Vendor/signup/signup.module#SignupPageModule'
+    },
+    {
+        path: 'vendor-login',
+        loadChildren: './pages/Vendor/login/login.module#LoginPageModule'
+    },
+    {
+        path: 'dashboard',
+        loadChildren: './pages/Vendor/dashboard/dashboard/dashboard.module#DashboardPageModule'
+    },
+    {
+        path: 'upload',
+        loadChildren: './pages/Vendor/product_upload/upload/upload.module#UploadPageModule'
+    },
+    {
+        path: 'view',
+        loadChildren: './pages/Vendor/product_view/view/view.module#ViewPageModule'
+    },
 ];
 var AppRoutingModule = /** @class */ (function () {
     function AppRoutingModule() {
@@ -942,7 +988,7 @@ var ImagePreviewPageModule = /** @class */ (function () {
 
 "use strict";
 __webpack_require__.r(__webpack_exports__);
-/* harmony default export */ __webpack_exports__["default"] = (":host .image-preview-toolbar {\n  --background: transparent;\n  margin-top: 10px;\n  margin-bottom: 30px;\n  margin-left: -5px !important;\n}\n:host ion-content {\n  --background: rgba(0, 0, 0, 0.84);\n  min-height: 100vh !important;\n}\n:host .footer {\n  --background: transparent;\n  margin-top: 10px;\n}\n:host ion-slides {\n  height: 80%;\n}\n/*# sourceMappingURL=data:application/json;base64,eyJ2ZXJzaW9uIjozLCJzb3VyY2VzIjpbIi9Vc2Vycy91c2VyL0RldmVsb3BtZW50L2lvbmljUHJvamVjdHMvYmFzZUFQUC9pb25pYzRDb3Jkb3ZhL3NyYy9hcHAvcGFnZXMvdWkvaW1hZ2UtcHJldmlldy9pbWFnZS1wcmV2aWV3LnBhZ2Uuc2NzcyIsInNyYy9hcHAvcGFnZXMvdWkvaW1hZ2UtcHJldmlldy9pbWFnZS1wcmV2aWV3LnBhZ2Uuc2NzcyJdLCJuYW1lcyI6W10sIm1hcHBpbmdzIjoiQUFFSTtFQUNJLHlCQUFBO0VBQ0EsZ0JBQUE7RUFDQSxtQkFBQTtFQUNBLDRCQUFBO0FDRFI7QURHSTtFQUNJLGlDQUFBO0VBQ0EsNEJBQUE7QUNEUjtBREdJO0VBQ0kseUJBQUE7RUFDQSxnQkFBQTtBQ0RSO0FER0k7RUFDSSxXQUFBO0FDRFIiLCJmaWxlIjoic3JjL2FwcC9wYWdlcy91aS9pbWFnZS1wcmV2aWV3L2ltYWdlLXByZXZpZXcucGFnZS5zY3NzIiwic291cmNlc0NvbnRlbnQiOlsiXG46aG9zdCB7XG4gICAgLmltYWdlLXByZXZpZXctdG9vbGJhciB7XG4gICAgICAgIC0tYmFja2dyb3VuZDogdHJhbnNwYXJlbnQ7XG4gICAgICAgIG1hcmdpbi10b3A6IDEwcHg7XG4gICAgICAgIG1hcmdpbi1ib3R0b206IDMwcHg7XG4gICAgICAgIG1hcmdpbi1sZWZ0OiAtNXB4ICFpbXBvcnRhbnQ7XG4gICAgfVxuICAgIGlvbi1jb250ZW50IHtcbiAgICAgICAgLS1iYWNrZ3JvdW5kOiByZ2JhKDAsIDAsIDAsIDAuODQpO1xuICAgICAgICBtaW4taGVpZ2h0OiAxMDB2aCAhaW1wb3J0YW50O1xuICAgIH1cbiAgICAuZm9vdGVyIHtcbiAgICAgICAgLS1iYWNrZ3JvdW5kOiB0cmFuc3BhcmVudDtcbiAgICAgICAgbWFyZ2luLXRvcDogMTBweDtcbiAgICB9XG4gICAgaW9uLXNsaWRlcyB7XG4gICAgICAgIGhlaWdodDogODAlO1xuICAgIH1cbn0iLCI6aG9zdCAuaW1hZ2UtcHJldmlldy10b29sYmFyIHtcbiAgLS1iYWNrZ3JvdW5kOiB0cmFuc3BhcmVudDtcbiAgbWFyZ2luLXRvcDogMTBweDtcbiAgbWFyZ2luLWJvdHRvbTogMzBweDtcbiAgbWFyZ2luLWxlZnQ6IC01cHggIWltcG9ydGFudDtcbn1cbjpob3N0IGlvbi1jb250ZW50IHtcbiAgLS1iYWNrZ3JvdW5kOiByZ2JhKDAsIDAsIDAsIDAuODQpO1xuICBtaW4taGVpZ2h0OiAxMDB2aCAhaW1wb3J0YW50O1xufVxuOmhvc3QgLmZvb3RlciB7XG4gIC0tYmFja2dyb3VuZDogdHJhbnNwYXJlbnQ7XG4gIG1hcmdpbi10b3A6IDEwcHg7XG59XG46aG9zdCBpb24tc2xpZGVzIHtcbiAgaGVpZ2h0OiA4MCU7XG59Il19 */");
+/* harmony default export */ __webpack_exports__["default"] = (":host .image-preview-toolbar {\n  --background: transparent;\n  margin-top: 10px;\n  margin-bottom: 30px;\n  margin-left: -5px !important;\n}\n:host ion-content {\n  --background: rgba(0, 0, 0, 0.84);\n  min-height: 100vh !important;\n}\n:host .footer {\n  --background: transparent;\n  margin-top: 10px;\n}\n:host ion-slides {\n  height: 80%;\n}\n/*# sourceMappingURL=data:application/json;base64,eyJ2ZXJzaW9uIjozLCJzb3VyY2VzIjpbInNyYy9hcHAvcGFnZXMvdWkvaW1hZ2UtcHJldmlldy9EOlxcbWluZVxca3JlYWRvci9zcmNcXGFwcFxccGFnZXNcXHVpXFxpbWFnZS1wcmV2aWV3XFxpbWFnZS1wcmV2aWV3LnBhZ2Uuc2NzcyIsInNyYy9hcHAvcGFnZXMvdWkvaW1hZ2UtcHJldmlldy9pbWFnZS1wcmV2aWV3LnBhZ2Uuc2NzcyJdLCJuYW1lcyI6W10sIm1hcHBpbmdzIjoiQUFFSTtFQUNJLHlCQUFBO0VBQ0EsZ0JBQUE7RUFDQSxtQkFBQTtFQUNBLDRCQUFBO0FDRFI7QURHSTtFQUNJLGlDQUFBO0VBQ0EsNEJBQUE7QUNEUjtBREdJO0VBQ0kseUJBQUE7RUFDQSxnQkFBQTtBQ0RSO0FER0k7RUFDSSxXQUFBO0FDRFIiLCJmaWxlIjoic3JjL2FwcC9wYWdlcy91aS9pbWFnZS1wcmV2aWV3L2ltYWdlLXByZXZpZXcucGFnZS5zY3NzIiwic291cmNlc0NvbnRlbnQiOlsiXG46aG9zdCB7XG4gICAgLmltYWdlLXByZXZpZXctdG9vbGJhciB7XG4gICAgICAgIC0tYmFja2dyb3VuZDogdHJhbnNwYXJlbnQ7XG4gICAgICAgIG1hcmdpbi10b3A6IDEwcHg7XG4gICAgICAgIG1hcmdpbi1ib3R0b206IDMwcHg7XG4gICAgICAgIG1hcmdpbi1sZWZ0OiAtNXB4ICFpbXBvcnRhbnQ7XG4gICAgfVxuICAgIGlvbi1jb250ZW50IHtcbiAgICAgICAgLS1iYWNrZ3JvdW5kOiByZ2JhKDAsIDAsIDAsIDAuODQpO1xuICAgICAgICBtaW4taGVpZ2h0OiAxMDB2aCAhaW1wb3J0YW50O1xuICAgIH1cbiAgICAuZm9vdGVyIHtcbiAgICAgICAgLS1iYWNrZ3JvdW5kOiB0cmFuc3BhcmVudDtcbiAgICAgICAgbWFyZ2luLXRvcDogMTBweDtcbiAgICB9XG4gICAgaW9uLXNsaWRlcyB7XG4gICAgICAgIGhlaWdodDogODAlO1xuICAgIH1cbn0iLCI6aG9zdCAuaW1hZ2UtcHJldmlldy10b29sYmFyIHtcbiAgLS1iYWNrZ3JvdW5kOiB0cmFuc3BhcmVudDtcbiAgbWFyZ2luLXRvcDogMTBweDtcbiAgbWFyZ2luLWJvdHRvbTogMzBweDtcbiAgbWFyZ2luLWxlZnQ6IC01cHggIWltcG9ydGFudDtcbn1cbjpob3N0IGlvbi1jb250ZW50IHtcbiAgLS1iYWNrZ3JvdW5kOiByZ2JhKDAsIDAsIDAsIDAuODQpO1xuICBtaW4taGVpZ2h0OiAxMDB2aCAhaW1wb3J0YW50O1xufVxuOmhvc3QgLmZvb3RlciB7XG4gIC0tYmFja2dyb3VuZDogdHJhbnNwYXJlbnQ7XG4gIG1hcmdpbi10b3A6IDEwcHg7XG59XG46aG9zdCBpb24tc2xpZGVzIHtcbiAgaGVpZ2h0OiA4MCU7XG59Il19 */");
 
 /***/ }),
 
@@ -3135,7 +3181,7 @@ Object(_angular_platform_browser_dynamic__WEBPACK_IMPORTED_MODULE_1__["platformB
 /*! no static exports found */
 /***/ (function(module, exports, __webpack_require__) {
 
-module.exports = __webpack_require__(/*! /Users/user/Development/ionicProjects/baseAPP/ionic4Cordova/src/main.ts */"./src/main.ts");
+module.exports = __webpack_require__(/*! D:\mine\kreador\src\main.ts */"./src/main.ts");
 
 
 /***/ })

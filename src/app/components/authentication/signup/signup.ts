@@ -35,7 +35,7 @@ SignupForm: FormGroup;
     this.api.Signup(this.SignupForm.value)
       .subscribe((res)=>{
         this.zone.run(async () =>{
-          console.log(res);
+          
           if(res.status == true){
             const toasts = await this.toast.create({
               message: 'Account Created Successfully',

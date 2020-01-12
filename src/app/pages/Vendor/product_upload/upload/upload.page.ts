@@ -43,12 +43,12 @@ productForm: FormGroup;
     photo: file
   });
   this.productForm.get('photo').updateValueAndValidity();
-  console.log('thumb', file);
+ 
 }
 
 
 // Submit product
-onsubmit() {
+submit() {
 
   var formData: any = new FormData();
   formData.append("sku", this.productForm.get('sku').value);
@@ -63,7 +63,7 @@ onsubmit() {
     this.api.create(formData)
       .subscribe((res)=>{
         this.zone.run(async () =>{
-          console.log(res);
+       
           if(res.status == true){
             const toasts = await this.toast.create({
               message: 'Product Created Successfully',
